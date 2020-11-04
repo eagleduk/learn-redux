@@ -26,4 +26,9 @@ https://react.vlpt.us/redux/
  - app.js 에서 react-redux 의 Provider 를 호출하여 store 생성 후에 인자로 넣어준다.
 
 4. 카운터 구현
- - 
+ - 프리젠테이셔널 컴포넌트 => 필요한 props 만 받아와서 화면에 출력하는 UI 를 선언하는 역할
+ - 컨테이너 컴포넌트 => 상태관리, 액션 처리등을 한다.
+
+5. 리덕스 개발자 도구
+ - 크롬 확장 프로그램 Redux DevTools
+ - yarn add redux-devtools-extension
