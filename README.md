@@ -43,3 +43,7 @@ https://react.vlpt.us/redux/
   b. useSelector 의 두번 쨰 파라메터 함수에서 (left,right) 를 각각 비교한다.
   c. useSelector 의 두번 째 파라메터에 shallowEqual 를 추가한다.
  - 하지만 모든 게 정답은 아니다. 각각 상황에 맞게 사용할것.
+
+8. connect, HOC 를 사용하여 class 컴포넌트에서 Redux 사용
+ - connect 는 hook 과는 다르게 모두다 Props 로 넘겨주어야 한다.
+ - 그래서 hook 이 awesome 이구나.

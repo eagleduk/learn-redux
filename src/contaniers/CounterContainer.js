@@ -1,29 +1,46 @@
-import { useSelector, useDispatch, shallowEqual } from "react-redux";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { decrease, increase, setDiff } from "../modules/counter";
 import Counter from "../components/Counter"
 
-function CounterContainer() {
-
-    const {number,diff} = useSelector(store => ({
-        number: store.counter.number,
-        diff: store.counter.diff
-    }), shallowEqual);
-
-    const dispatch = useDispatch();
-
-    const onIncrease = () => dispatch(increase());
-    const onDecrease = () => dispatch(decrease());
-    const onSetDiff = diff => dispatch(setDiff(diff));
+function CounterContainer({
+    number,
+    diff,
+    decrease,
+    increase,
+    setDiff
+}) {
 
     return (
         <Counter 
             number={number}
             diff={diff}
-            onDecrease={onDecrease}
-            onIncrease={onIncrease}
-            onSetDiff={onSetDiff}
+            onDecrease={decrease}
+            onIncrease={increase}
+            onSetDiff={setDiff}
         />
     )
 }
 
-export default CounterContainer;
+const mapStateToProps = (state) => {
+    return {
+        number: state.counter.number,
+        diff: state.counter.diff
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        increase,
+        decrease,
+        setDiff
+    }, dispatch);
+}
+// 객체의 값이 함수 형태이면 bindActionCreators 처럼 connect 에서 자동으로 action 을 만들어준다
+// const mapDispatchToProps = {
+//     increase,
+//     decrease,
+//     setDiff
+// }
+
+export default connect(mapStateToProps,mapDispatchToProps)(CounterContainer);
