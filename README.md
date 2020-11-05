@@ -36,3 +36,10 @@ https://react.vlpt.us/redux/
 6. 할일 목록 구현
  - 혼자 스스로 구현 해봄 동작은 정상적으로 동작..
  - 혼자 한거랑 크게 다를거 없음... 최적화만 추가..
+
+7. useSelector 최적화
+ - useSelector 를 사용하여 state 안에 있는 객체의 값을 가져올때 최적화는
+  a. 각각 하나씩 useSelector 를 사용하여 값을 가져온다
+  b. useSelector 의 두번 쨰 파라메터 함수에서 (left,right) 를 각각 비교한다.
+  c. useSelector 의 두번 째 파라메터에 shallowEqual 를 추가한다.
+ - 하지만 모든 게 정답은 아니다. 각각 상황에 맞게 사용할것.
