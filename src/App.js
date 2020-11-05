@@ -1,10 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import CounterContainer from './contaniers/CounterContainer';
+import TodosContainer from './contaniers/TodosContainer';
 
 function App() {
   return (
-    <CounterContainer />
+    <>
+      <CounterContainer />
+      <hr />
+      <TodosContainer />
+    </>
   );
 }
 

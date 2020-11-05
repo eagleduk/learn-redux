@@ -32,3 +32,6 @@ https://react.vlpt.us/redux/
 5. 리덕스 개발자 도구
  - 크롬 확장 프로그램 Redux DevTools
  - yarn add redux-devtools-extension
+
+6. 할일 목록 구현
+ - 혼자 스스로 구현 해봄 동작은 정상적으로 동작..
